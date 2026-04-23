@@ -24,3 +24,9 @@ The campus shuttle system is represented as a graph:
 | `bfs_dfs.cpp` | BFS and DFS implementations for traversal and connectivity analysis |
 | `dijkstra.cpp` | Dijkstra’s algorithm for shortest/fastest shuttle routes |
 |`mst.cpp`| Prim’s or Kruskal’s algorithm for minimum spanning tree analysis |
+
+## Build & Run
+```
+g++ -std=c++17 -o project2 main.cpp graph.cpp bfs_dfs.cpp dijkstra.cpp mst.cpp
+./project2
+```
