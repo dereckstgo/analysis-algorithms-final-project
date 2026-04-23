@@ -16,7 +16,7 @@ The campus shuttle system is represented as a graph:
 - **Weights:** Travel time between stops (in minutes)
 - **Graph Type:** Weighted (directed or undirected depending on assumptions)
 
-## ⚙️ Algorithms Implemented
+## Algorithms Implemented
 
 ### 1. Traversal Algorithms
 - **Breadth-First Search (BFS)**
