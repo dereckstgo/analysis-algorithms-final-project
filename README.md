@@ -27,6 +27,6 @@ The campus shuttle system is represented as a graph:
 
 ## Build & Run
 ```
-g++ -std=c++17 -o project2 main.cpp graph.cpp bfs_dfs.cpp dijkstra.cpp mst.cpp
-./project2
+g++ -std=c++17 -o projectFinal main.cpp graph.cpp bfs_dfs.cpp dijkstra.cpp mst.cpp
+./projectFinal
 ```
