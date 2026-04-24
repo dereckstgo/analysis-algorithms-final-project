@@ -1,0 +1,65 @@
+#include <iostream>
+#include <vector>
+#include <chrono>
+#include <functional>
+#include <cstdlib>
+using namespace std;
+
+//Update these with parameters once other files are done
+void bfs();
+void dfs();
+void dijkstra();
+void mst();
+
+//Times any function and returns elapsed ms
+double timeIt(function<void()> fn) {
+    auto start = chrono::high_resolution_clock::now();
+    fn();
+    auto end = chrono::high_resolution_clock::now();
+    return chrono::duration<double, milli>(end - start).count();
+}
+
+void testTraversal(string label){
+    cout << label << endl;
+
+    double bfsTime = timeIt([&]() {
+        //bfs(...);
+    });
+    
+    double dfsTime = timeIt([&]() {
+        //dfs(...);
+    });
+
+    cout << "  BFS Time: " << bfsTime << " ms\n";
+    cout << "  DFS Time: " << dfsTime << " ms\n\n";
+}
+
+void testDijkstra(string label) {
+    cout << label << endl;
+
+    double ms = timeIt([&]() {
+        //dijkstra(...);
+    });
+
+    cout << "  Time: " << ms << " ms\n\n";
+}
+
+void testMST(string label) {
+    cout << label << endl;
+
+    double ms = timeIt([&]() {
+        //mst(...);
+    });
+
+    cout << "  Time: " << ms << " ms\n\n";
+}
+
+int main(){
+    cout << "CAMPUS SHUTTLE NETWORK OPTIMIZATION\n\n";
+
+    testTraversal("Traversal Test (BFS and DFS):");
+    testDijkstra("Dijkstra Shortest Path Test:");
+    testMST("Minimum Spanning Tree Test:");
+
+    return 0;
+}
