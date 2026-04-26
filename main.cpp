@@ -8,7 +8,7 @@ using namespace std;
 //Update these with parameters once other files are done
 void bfs(int start);
 void dfs(int start);
-void dijkstra();
+void bellmanFord(int start);
 void mst();
 
 void buildGraph();
@@ -36,11 +36,11 @@ void testTraversal(string label, int start){
     cout << "  DFS Time: " << dfsTime << " ms\n\n";
 }
 
-void testDijkstra(string label) {
+void testBellmanFord(string label, int start) {
     cout << label << endl;
 
     double ms = timeIt([&]() {
-        //dijkstra(...);
+        bellmanFord(start);
     });
 
     cout << "  Time: " << ms << " ms\n\n";
@@ -62,7 +62,7 @@ int main(){
     buildGraph();
 
     testTraversal("Traversal Test (BFS and DFS):", 0);
-    testDijkstra("Dijkstra Shortest Path Test:");
+    testBellmanFord("Bellman-Ford Shortest Path Test:", 0);
     testMST("Minimum Spanning Tree Test:");
 
     return 0;
