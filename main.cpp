@@ -50,7 +50,7 @@ void testMST(string label) {
     cout << label << endl;
 
     double ms = timeIt([&]() {
-        //mst(...);
+        mst();
     });
 
     cout << "  Time: " << ms << " ms\n\n";
