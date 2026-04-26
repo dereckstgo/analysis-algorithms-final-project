@@ -6,10 +6,12 @@
 using namespace std;
 
 //Update these with parameters once other files are done
-void bfs();
-void dfs();
+void bfs(int start);
+void dfs(int start);
 void dijkstra();
 void mst();
+
+void buildGraph();
 
 //Times any function and returns elapsed ms
 double timeIt(function<void()> fn) {
@@ -19,15 +21,15 @@ double timeIt(function<void()> fn) {
     return chrono::duration<double, milli>(end - start).count();
 }
 
-void testTraversal(string label){
+void testTraversal(string label, int start){
     cout << label << endl;
 
     double bfsTime = timeIt([&]() {
-        //bfs(...);
+        bfs(start);
     });
     
     double dfsTime = timeIt([&]() {
-        //dfs(...);
+        dfs(start);
     });
 
     cout << "  BFS Time: " << bfsTime << " ms\n";
@@ -57,7 +59,9 @@ void testMST(string label) {
 int main(){
     cout << "CAMPUS SHUTTLE NETWORK OPTIMIZATION\n\n";
 
-    testTraversal("Traversal Test (BFS and DFS):");
+    buildGraph();
+
+    testTraversal("Traversal Test (BFS and DFS):", 0);
     testDijkstra("Dijkstra Shortest Path Test:");
     testMST("Minimum Spanning Tree Test:");
 
