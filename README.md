@@ -1,5 +1,5 @@
 # COT4400 Final Project - Campus Shuttle Network Optimization
-Optimization of a campus shuttle network using graph algorithms (BFS, Dijkstra, MST) to improve travel efficiency and minimize route costs.
+Optimization of a campus shuttle network using graph algorithms (BFS, Bellman-Ford, MST) to improve travel efficiency and minimize route costs.
 ## Problem Statement
 How can graph algorithms be applied to a campus shuttle transportation network to optimize student travel between locations while minimizing travel time and overall route cost?
 
@@ -22,11 +22,11 @@ The campus shuttle system is represented as a graph:
 | `main.cpp` | Entry point, test cases, timing |
 | `graph.cpp` | Graph construction, adjacency list setup, and helper functions for adding stops/routes |
 | `bfs_dfs.cpp` | BFS and DFS implementations for traversal and connectivity analysis |
-| `dijkstra.cpp` | Dijkstra’s algorithm for shortest/fastest shuttle routes |
+| `bellman_ford.cpp` | Bellman-Ford algorithm for shortest path analysis |
 |`mst.cpp`| Prim’s or Kruskal’s algorithm for minimum spanning tree analysis |
 
 ## Build & Run
 ```
-g++ -std=c++17 -o projectFinal main.cpp graph.cpp bfs_dfs.cpp dijkstra.cpp mst.cpp
+g++ -std=c++17 -o projectFinal main.cpp graph.cpp bfs_dfs.cpp bellman_ford.cpp mst.cpp
 ./projectFinal
 ```
