@@ -23,7 +23,7 @@ The campus shuttle system is represented as a graph:
 | `graph.cpp` | Graph construction, adjacency list setup, and helper functions for adding stops/routes |
 | `bfs_dfs.cpp` | BFS and DFS implementations for traversal and connectivity analysis |
 | `bellman_ford.cpp` | Bellman-Ford algorithm for shortest path analysis |
-|`mst.cpp`| Prim’s or Kruskal’s algorithm for minimum spanning tree analysis |
+|`mst.cpp`| Kruskal’s algorithm for minimum spanning tree analysis |
 
 ## Build & Run
 ```
