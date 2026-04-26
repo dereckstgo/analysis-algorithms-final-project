@@ -1,25 +1,3 @@
-/*
-PSEUDOCODE:
-Get graph and stops
-
-Create empty list of edges
-
-For each stop u:
-    For each edge from u:
-        Add edge (u, edge.to, edge.time) to edge list
-
-Set all distances to infinity
-Set source distance to 0
-
-Repeat V - 1 times:
-    For each edge:
-        Relax the edge if a shorter path is found
-
-Check all edges one more time for negative cycles
-
-Print shortest distances and paths from source
-*/
-
 #include <iostream>
 #include <vector>
 #include <algorithm>

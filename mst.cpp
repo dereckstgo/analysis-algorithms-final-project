@@ -1,29 +1,4 @@
 //Made the choice to use Kruskal's Algorithm
-/*
-PSEUDOCODE:
-Get graph and stops
-
-Create empty list of edges
-
-For each stop u:
-    For each edge from u:
-        Add edge (u, edge.to, edge.time, edge.routeName) to edge list
-
-Sort edges by time from smallest to largest
-
-Create Union-Find structure
-
-For each edge in sorted edge list:
-    If from and to are not already connected:
-        Add edge to MST
-        Union the two sets
-        Add edge time to total cost
-
-Stop when MST has V - 1 edges
-
-Print selected edges and total travel time
-*/
-
 #include <iostream>
 #include <vector>
 #include <algorithm>
