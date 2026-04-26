@@ -135,11 +135,54 @@ void addRoute(string from, string to, int time, string routeName){
     graph[fromIndex].push_back({toIndex, time, routeName});
 }
 
-void buildGraph(){
+void addRedRoute(){
+
+    addRoute("Marshall Student Center", "Post Office", 3, "Red");
+    addRoute("Post Office", "Parking and Transportation Services", 1, "Red");
+    addRoute("Parking and Transportation Services", "USF Health Faculty Office Building", 2, "Red");
+    addRoute("USF Health Faculty Office Building", "Holly Dr at Magnolia Dr", 2, "Red");
+    addRoute("Holly Dr at Magnolia Dr", "Children's Medical Services", 1, "Red");
+    addRoute("Children's Medical Services", "UATC to LIB", 2, "Red");
+    addRoute("UATC to LIB", "E 131st Ave to LIB", 2, "Red");
+    addRoute("E 131st Ave to LIB", "N 22nd St at Vollmer Way", 3, "Red");
+    addRoute("N 22nd St at Vollmer Way", "N 22nd St at University Village", 1, "Red");
+    addRoute("N 22nd St at University Village", "HUB Tampa to Library", 4, "Red");
+    addRoute("HUB Tampa to Library", "The Standard to LIB", 2, "Red");
+    addRoute("The Standard to LIB", "Botanical Gardens to Library", 3, "Red");
+    addRoute("Botanical Gardens to Library", "University Technology Center", 2, "Red");
+    addRoute("University Technology Center", "Research Park", 1, "Red");
+    addRoute("Research Park", "Library", 2, "Red");
+    addRoute("Library", "Math & Engineering", 1, "Red");
+    addRoute("Math & Engineering", "Center for Urban Transportation Research", 2, "Red");
+    addRoute("Center for Urban Transportation Research", "Magnolia Apartments", 2, "Red");
+    addRoute("Magnolia Apartments", "Magnolia Fields Complex", 2, "Red");
+    addRoute("Magnolia Fields Complex", "Botanical Gardens to Mall", 1, "Red");
+    addRoute("Botanical Gardens to Mall", "The Standard to MSC", 2, "Red");
+    addRoute("The Standard to MSC", "HUB Tampa to MSC", 2, "Red");
+    addRoute("HUB Tampa to MSC", "N 22nd St at University Village to MSC", 4, "Red");
+    addRoute("N 22nd St at University Village to MSC", "N 22nd St at University Lake Dr", 1, "Red");
+    addRoute("N 22nd St at University Lake Dr", "E 131st Ave to MSC", 2, "Red");
+    addRoute("E 131st Ave to MSC", "UATC to MSC", 1, "Red");
+    addRoute("UATC to MSC", "Holly Dr at MDA", 3, "Red");
+    addRoute("Holly Dr at MDA", "Holly Dr at Health Dr", 1, "Red");
+    addRoute("Holly Dr at Health Dr", "Stabile Research Building", 1, "Red");
+    addRoute("Stabile Research Building", "Moffitt Research Center", 2, "Red");
+    addRoute("Moffitt Research Center", "School of Music", 2, "Red");
+    addRoute("School of Music", "Fine Arts Studio", 1, "Red");
+    addRoute("Fine Arts Studio", "Theater Centre", 1, "Red");
+    addRoute("Theater Centre", "Marshall Student Center", 1, "Red");
+}
+
+void buildGraph(bool onlyRed){
     buildStopIndex();
 
     graph.clear();
     graph.resize(stops.size());
+
+    if(onlyRed == true){
+        addRedRoute();
+        return;
+    }
 
     //BLUE route
     addRoute("Marshall Student Center", "The Village Palm Dr Entrance", 2, "Blue");

@@ -11,7 +11,8 @@ void dfs(int start);
 void dijkstra();
 void mst();
 
-void buildGraph();
+void buildGraph(bool onlyRed);
+bool onlyRed = true;
 
 //Times any function and returns elapsed ms
 double timeIt(function<void()> fn) {
@@ -57,9 +58,17 @@ void testMST(string label) {
 }
 
 int main(){
-    cout << "CAMPUS SHUTTLE NETWORK OPTIMIZATION\n\n";
+    cout << "CAMPUS SHUTTLE NETWORK OPTIMIZATION";
 
-    buildGraph();
+    buildGraph(onlyRed);
+    if(onlyRed == true){
+        cout << " FOR RED ROUTE\n\n";
+    }
+    else
+    {
+        cout << "\n\n";
+    }
+
 
     testTraversal("Traversal Test (BFS and DFS):", 0);
     testDijkstra("Dijkstra Shortest Path Test:");
