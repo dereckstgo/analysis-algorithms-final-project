@@ -58,17 +58,25 @@ void testMST(string label) {
 }
 
 int main(){
-    cout << "CAMPUS SHUTTLE NETWORK OPTIMIZATION";
+    cout << "CAMPUS SHUTTLE NETWORK OPTIMIZATION\n\n";
 
-    buildGraph(onlyRed);
-    if(onlyRed == true){
-        cout << " FOR RED ROUTE\n\n";
-    }
-    else
-    {
-        cout << "\n\n";
-    }
+    // =========================
+    // SMALL GRAPH (Red Route)
+    // =========================
+    cout << "----- RED ROUTE (SMALL GRAPH) -----\n\n";
 
+    buildGraph(true);
+
+    testTraversal("Traversal Test (BFS and DFS):", 0);
+    testBellmanFord("Bellman-Ford Shortest Path Test:", 0);
+    testMST("Minimum Spanning Tree Test:");
+
+    // =========================
+    // LARGE GRAPH (Full Campus)
+    // =========================
+    cout << "\n----- FULL CAMPUS GRAPH (LARGE) -----\n\n";
+
+    buildGraph(false);
 
     testTraversal("Traversal Test (BFS and DFS):", 0);
     testBellmanFord("Bellman-Ford Shortest Path Test:", 0);
