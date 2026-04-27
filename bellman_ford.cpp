@@ -33,9 +33,8 @@ void bellmanFord(int start) {
         }
     }
 
-    // Initialize distances and predecessors
+    // Initialize distances
     vector<int> dist(stops.size(), INT_MAX);
-    vector<int> predecessor(stops.size(), -1);
 
     dist[start] = 0;
 
@@ -47,7 +46,6 @@ void bellmanFord(int start) {
             // Relax edge if shorter path found
             if (dist[edge.from] != INT_MAX && dist[edge.from] + edge.time < dist[edge.to]) {
                 dist[edge.to] = dist[edge.from] + edge.time;
-                predecessor[edge.to] = edge.from;
                 updated = true;
             }
         }
@@ -66,7 +64,7 @@ void bellmanFord(int start) {
         }
     }
 
-    // Print shortest distances and paths
+    // Print shortest distances
     cout << "Bellman-Ford shortest paths from " << stops[start] << ":\n";
 
     for (int i = 0; i < stops.size(); i++) {
@@ -77,25 +75,7 @@ void bellmanFord(int start) {
             continue;
         }
 
-        cout << dist[i] << " min | Path: ";
-
-        // Reconstruct path using predecessors
-        vector<int> path;
-        for (int current = i; current != -1; current = predecessor[current]) {
-            path.push_back(current);
-        }
-
-        reverse(path.begin(), path.end());
-
-        for (int j = 0; j < path.size(); j++) {
-            cout << stops[path[j]];
-
-            if (j < path.size() - 1) {
-                cout << " -> ";
-            }
-        }
-
-        cout << endl;
+        cout << dist[i] << " min" << endl;
     }
 
     cout << endl;
